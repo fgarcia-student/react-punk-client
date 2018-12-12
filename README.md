@@ -19,7 +19,7 @@
     - Improve our current skillsets and architecture decisions
 
 ### Future goals for the project:
-    - [ ] Design pages (expand later..)
-    - [ ] Add functionality to page X (expand later..)
-    - [ ] Deploy application using free hosting (heroku, etc)
-    - [ ] Incorporate some BaaS like Firebase (expand later..)
+    * [ ] Design pages (expand later..)
+    * [ ] Add functionality to page X (expand later..)
+    * [ ] Deploy application using free hosting (heroku, etc)
+    * [ ] Incorporate some BaaS like Firebase (expand later..)
