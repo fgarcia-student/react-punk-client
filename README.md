@@ -14,11 +14,11 @@
 
 ## Goals
 
-Our main goals were the following:
+### Our main goals were the following:
     - Design, build, and release a fully featured front end application using a public api
     - Improve our current skillsets and architecture decisions
 
-Future goals for the project:
+### Future goals for the project:
     - [ ] Design pages (expand later..)
     - [ ] Add functionality to page X (expand later..)
     - [ ] Deploy application using free hosting (heroku, etc)
