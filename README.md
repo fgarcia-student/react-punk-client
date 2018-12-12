@@ -17,6 +17,7 @@
 ### Our main goals were the following:
     - Design, build, and release a fully featured front end application using a public api
     - Improve our current skillsets and architecture decisions
+    - Demonstrate ability to write scalable, and maintainable code using open source libraries
 
 ### Future goals for the project:
 
@@ -24,3 +25,5 @@
  - [ ] Add functionality to page X (expand later..)
  - [ ] Deploy application using free hosting (heroku, etc)
  - [ ] Incorporate some BaaS like Firebase (expand later..)
+ 
+ MIT License 2018
