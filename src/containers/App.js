@@ -21,8 +21,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     // exposes dispatch to action creators
-    // use with bindActionCreators to automagically bind
-    // dispatch to action creators
+    // use with bindActionCreators to wrap action creators in
+    // dispatch call
+    // use when passing action creators to unaware children
     return bindActionCreators({
         // list relevant action creators here
     }, dispatch);
