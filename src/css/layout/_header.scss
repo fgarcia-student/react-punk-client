@@ -7,45 +7,45 @@
         height: inherit;
         align-items: flex-end;
         justify-content: flex-end;
-        font-size: 60rem;
+        font-size: $font-size-large;
         font-weight: 100;
 
         &__attribute {
             margin: 2rem;
             background-image: linear-gradient(to bottom, $color-black 33%, transparent 33%);
-            background-position: 0 61rem;
+            background-position: 0 ($font-size-large + 1);
             background-repeat: repeat-x;
             background-size: 1px 1.5rem;
         }
     }
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: $media-screen-medium) {
     .header__landing {
-        font-size: 40rem;
+        font-size: $font-size-medium;
 
         &__attribute {
-            background-position: 0 41rem;
+            background-position: 0 ($font-size-medium + 1);
         }
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: $media-screen-small) {
     .header__landing {
-        font-size: 30rem;
+        font-size: $font-size-small;
 
         &__attribute {
-            background-position: 0 31rem;
+            background-position: 0 ($font-size-small + 1);
         }
     }
 }
 
-@media only screen and (max-width: 525px) {
+@media only screen and (max-width: $media-screen-xsmall) {
     .header__landing {
-        font-size: 20rem;
+        font-size: $font-size-xsmall;
 
         &__attribute {
-            background-position: 0 21rem;
+            background-position: 0 ($font-size-xsmall + 1);
         }
     }
 }
