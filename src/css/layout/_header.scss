@@ -1,7 +1,6 @@
 
 .header {
     height: 100vh;
-    background-color: orangered;
 
     &__landing {
         display: flex;
@@ -13,10 +12,40 @@
 
         &__attribute {
             margin: 2rem;
-            background-image: linear-gradient(to bottom, black 33%, transparent 33%);
+            background-image: linear-gradient(to bottom, $color-black 33%, transparent 33%);
             background-position: 0 61rem;
             background-repeat: repeat-x;
             background-size: 1px 1.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .header__landing {
+        font-size: 40rem;
+
+        &__attribute {
+            background-position: 0 41rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .header__landing {
+        font-size: 30rem;
+
+        &__attribute {
+            background-position: 0 31rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 525px) {
+    .header__landing {
+        font-size: 20rem;
+
+        &__attribute {
+            background-position: 0 21rem;
         }
     }
 }

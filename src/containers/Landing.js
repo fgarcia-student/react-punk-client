@@ -4,16 +4,17 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 const Landing = (props) => {
-    const fakeProps = "ABV";
     return (
         <>
-            <Header attribute={fakeProps} />
+            <Header attribute={props.selectedAttribute} />
         </>
     );
 }
 
 const mapStateToProps = (state) => {
-    return {};
+    return {
+        selectedAttribute: "ABV",
+    };
 }
 
 const mapDispatchToProps = (dispatch) => {
