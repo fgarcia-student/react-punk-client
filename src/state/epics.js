@@ -1,11 +1,12 @@
 import { combineEpics } from 'redux-observable';
-import { mapTo } from 'rxjs/operators';
+import { FetchBeer } from './entities/beer/operations/FetchBeer';
+import { FetchNextPage } from './entities/beer/operations/FetchNextPage';
+import { FetchBeerById } from './entities/beer/operations/FetchBeerById';
 
-function dummyEpic(action, state) {
-    return action.pipe(mapTo({ type: "Dummy" }));
-}
 
 export default combineEpics(
     // place epics in here
-    dummyEpic
+    FetchBeer,
+    FetchNextPage,
+    FetchBeerById
 );
