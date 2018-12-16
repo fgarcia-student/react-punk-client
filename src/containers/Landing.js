@@ -4,6 +4,7 @@ import { getBeer } from '../state/entities/beer/selectors';
 import { InitFetchBeer } from '../state/entities/beer/actions/InitFetchBeer';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import BeerCard from '../components/BeerCard';
 
 const Landing = (props) => {
     console.log(props.beer);
@@ -21,6 +22,16 @@ const Landing = (props) => {
     return (
         <>
             <Header attribute={props.selectedAttribute} />
+            {props.beer.toList().map((beer) => {
+                return (
+                    <BeerCard
+                        name={beer.name}
+                        tagline={beer.tagline}
+                        attribute={props.selectedAttribute}
+                        beer={beer}
+                    />
+                );
+            })}
         </>
     );
 }
@@ -28,7 +39,7 @@ const Landing = (props) => {
 const mapStateToProps = (state) => {
     return {
         beer: getBeer(state),
-        selectedAttribute: "ABV"
+        selectedAttribute: "abv"
     };
 }
 

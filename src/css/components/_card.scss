@@ -1,0 +1,91 @@
+.card {
+    width: 50vw;
+    height: 20vh;
+    margin: 1rem;
+    background-color: orangered;
+
+    font-size: $font-size-interactive-large;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: [col-1-start] 70% [col-1-end col-2-start] 30%;
+    grid-template-rows: [row-1-start] 50% [row-1-end row-2-start] 50%;
+    grid-template-areas:
+        "A B"
+        "C C";
+    
+    &__main,
+    &__sub {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__main {
+        grid-area: A;
+        align-self: center;
+    }
+
+    &__sub {
+        grid-area: C;
+        align-self: center;
+        justify-self: end;
+        text-align: end;
+    }
+
+    &__attribute {
+        grid-area: B;
+        align-self: center;
+        justify-self: end;
+
+        &__name {
+            text-transform: uppercase;
+            padding-right: .5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: $media-screen-medium) {
+    .card {
+        font-size: $font-size-interactive-medium;
+        grid-template-areas:
+            "A"
+            "C"
+            "B";
+        grid-template-columns: [col-1-start] 100%;
+        grid-template-rows: [row-1-start] 30% [row-1-end row-2-start] 30% [row-2-end row-3-start] 40%;
+        
+        &__sub {
+            justify-self: start;
+            text-align: start;
+        }
+
+        &__attribute {
+            font-size: $font-size-interactive-large;
+        }
+    }
+}
+
+@media only screen and (max-width: $media-screen-small) {
+    .card {
+        font-size: $font-size-interactive-small;
+        grid-template-areas:
+            "A"
+            "B";
+        grid-template-columns: [col-1-start] 100%;
+        grid-template-rows: [row-1-start] 50% [row-1-end row-2-start] 50%;
+
+        &__sub {
+            display: none;
+        }
+
+        &__main {
+            font-size: $font-size-interactive-medium;
+        }
+
+        &__attribute {
+            font-size: $font-size-interactive-large;
+            justify-self: end;
+        }
+    }
+}
