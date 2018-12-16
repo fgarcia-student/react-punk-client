@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import BeerReducer from './entities/beer/reducers';
 
 function dummyReducer(state = {}, action) {
     return state;
@@ -7,7 +8,7 @@ function dummyReducer(state = {}, action) {
 export default combineReducers({
     entities: combineReducers({
         // Reducers handling responses from api calls
-        dummyReducer
+        beer: BeerReducer
     }),
     views: combineReducers({
         // Reducers handling view models used by the application
