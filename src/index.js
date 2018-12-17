@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import Landing from './containers/Landing';
 import store from './state/store';
+import './css/icon-fonts/icon-font.css';
 import './css/main.scss';
 import * as serviceWorker from './service-worker/serviceWorker';
 
