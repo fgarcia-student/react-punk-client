@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ResponsiveContainer, LineChart, Tooltip, Line, ReferenceDot } from 'recharts';
+import { ResponsiveContainer, LineChart, Line, ReferenceDot } from 'recharts';
 import BeerCard from './BeerCard';
 
 const SelectedAttributeGraph = (props) => {
     const [lineColor, lineWidth] = ["#8884d8", 3];
+    const [selectedDotRadius, selectedDotColor] = [5, lineColor];
     const [index, setIndex] = useState(Math.ceil(props.beer.size / 2));
 
     useEffect(() => {
@@ -28,6 +29,14 @@ const SelectedAttributeGraph = (props) => {
         }
     }
 
+    function jumpToStart() {
+        setIndex(0);
+    }
+
+    function jumpToEnd() {
+        setIndex(props.beer.size - 1);
+    }
+
     if (props.beer.size === 0) {
         return <div>Loading...</div>
     }
@@ -37,11 +46,11 @@ const SelectedAttributeGraph = (props) => {
             <div className="section_interactive_graph__container">
                 <ResponsiveContainer>
                     <LineChart data={sorted.toArray()}>
-                        <Tooltip />
                         <ReferenceDot
                             x={index}
                             y={sorted.get(index)[props.selectedAttribute]}
-                            fill={lineColor}
+                            r={selectedDotRadius}
+                            fill={selectedDotColor}
                         />
                         <Line
                             type="monotone"
@@ -54,6 +63,7 @@ const SelectedAttributeGraph = (props) => {
                 </ResponsiveContainer>
             </div>
             <div className="section_interactive_graph__card_wrapper">
+                <i className={"icon-arrows-left-double-32 font-size-large"} onClick={jumpToStart}></i>
                 <i className={"icon-arrows-left font-size-large"} onClick={decreaseIndex}></i>
                 <BeerCard
                     main={"name"}
@@ -62,6 +72,7 @@ const SelectedAttributeGraph = (props) => {
                     beer={sorted.get(index, null)}
                     />
                 <i className={"icon-arrows-right font-size-large"} onClick={increaseIndex}></i>
+                <i className={"icon-arrows-right-double font-size-large"} onClick={jumpToEnd}></i>
             </div>
         </div>
     );
