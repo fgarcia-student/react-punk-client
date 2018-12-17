@@ -1,0 +1,20 @@
+.section_interactive_graph {
+    height: 100vh;
+
+    &__container {
+        float: left;
+        width: 60%;
+        height: 70%;
+    }
+
+    &__card_wrapper {
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > i:hover {
+            cursor: pointer;
+        }
+    }
+}
