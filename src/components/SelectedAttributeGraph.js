@@ -45,7 +45,7 @@ const SelectedAttributeGraph = (props) => {
         <div className="section_interactive_graph">
             <div className="section_interactive_graph__container">
                 <ResponsiveContainer>
-                    <LineChart data={sorted.toArray()}>
+                    <LineChart className={"svg-padding-1"} data={sorted.toArray()}>
                         <ReferenceDot
                             x={index}
                             y={sorted.get(index)[props.selectedAttribute]}
@@ -58,6 +58,7 @@ const SelectedAttributeGraph = (props) => {
                             dot={false}
                             stroke={lineColor}
                             strokeWidth={lineWidth}
+                            isAnimationActive={false}
                         />
                     </LineChart>
                 </ResponsiveContainer>
