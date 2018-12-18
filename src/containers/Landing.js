@@ -5,6 +5,7 @@ import { InitFetchBeer } from '../state/entities/beer/actions/InitFetchBeer';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import SelectedAttributeGraph from '../components/SelectedAttributeGraph';
+import ContinueSearch from '../components/ContinueSearch';
 
 const Landing = (props) => {
     console.log(props.beer);
@@ -26,6 +27,7 @@ const Landing = (props) => {
                 selectedAttribute={props.selectedAttribute}
                 beer={props.beer}
             />
+            <ContinueSearch />
         </>
     );
 }
