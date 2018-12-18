@@ -3,7 +3,7 @@ import { ResponsiveContainer, LineChart, Line, ReferenceDot } from 'recharts';
 import BeerCard from './BeerCard';
 
 const SelectedAttributeGraph = (props) => {
-    const [lineColor, lineWidth] = ["#8884d8", 3];
+    const [lineColor, lineWidth] = ["#A52A2A", 3];
     const [selectedDotRadius, selectedDotColor] = [5, lineColor];
     const [index, setIndex] = useState(Math.ceil(props.beer.size / 2));
 
