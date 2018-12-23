@@ -27,7 +27,9 @@ const Landing = (props) => {
                 selectedAttribute={props.selectedAttribute}
                 beer={props.beer}
             />
-            <ContinueSearch />
+            <ContinueSearch
+                selectedAttribute={props.selectedAttribute}
+            />
         </>
     );
 }

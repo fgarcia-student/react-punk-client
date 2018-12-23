@@ -7,7 +7,7 @@ const BeerCard = (props) => {
             <div className="card__main">{props.beer[props.main]}</div>
             <div className="card__sub">{props.beer[props.sub]}</div>
             <div className="card__attribute">
-                <span className="card__attribute__name">{props.attribute}</span>
+                <span className="card__attribute__name uppercase">{props.attribute}</span>
                 <span className="card__attribute__value">{props.beer[props.attribute]}</span>
             </div>
         </div>
