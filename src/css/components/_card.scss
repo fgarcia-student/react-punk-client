@@ -2,9 +2,9 @@
     width: 50vw;
     height: 20vh;
     margin: 1rem;
-    background-color: orangered;
+    background-color: darken(rgba(#F3EBE5, .75), 10%);
 
-    font-size: $font-size-interactive-large;
+    font-size: $font-size-card-large;
     padding: 1rem;
     display: grid;
     grid-template-columns: [col-1-start] 70% [col-1-end col-2-start] 30%;
@@ -47,7 +47,7 @@
 
 @media only screen and (max-width: $media-screen-medium) {
     .card {
-        font-size: $font-size-interactive-medium;
+        font-size: $font-size-card-medium;
         grid-template-areas:
             "A"
             "C"
@@ -61,14 +61,14 @@
         }
 
         &__attribute {
-            font-size: $font-size-interactive-large;
+            font-size: $font-size-card-large;
         }
     }
 }
 
 @media only screen and (max-width: $media-screen-small) {
     .card {
-        font-size: $font-size-interactive-small;
+        font-size: $font-size-card-small;
         grid-template-areas:
             "A"
             "B";
@@ -80,11 +80,11 @@
         }
 
         &__main {
-            font-size: $font-size-interactive-medium;
+            font-size: $font-size-card-medium;
         }
 
         &__attribute {
-            font-size: $font-size-interactive-large;
+            font-size: $font-size-card-large;
             justify-self: end;
         }
     }
