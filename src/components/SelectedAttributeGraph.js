@@ -3,8 +3,8 @@ import { ResponsiveContainer, LineChart, Line, ReferenceDot } from 'recharts';
 import BeerCard from './BeerCard';
 
 const SelectedAttributeGraph = (props) => {
-    const [lineColor, lineWidth] = ["#A52A2A", 3];
-    const [selectedDotRadius, selectedDotColor] = [5, lineColor];
+    const [lineColor, lineWidth] = ["#A52A2A", 6];
+    const [selectedDotRadius, selectedDotColor] = [8, lineColor];
     const [index, setIndex] = useState(Math.ceil(props.beer.size / 2));
 
     useEffect(() => {
@@ -42,7 +42,7 @@ const SelectedAttributeGraph = (props) => {
     }
 
     return (
-        <div className="section_interactive_graph">
+        <section className="section_interactive_graph">
             <div className="section_interactive_graph__container">
                 <ResponsiveContainer>
                     <LineChart className={"svg-padding-1"} data={sorted.toArray()}>
@@ -75,7 +75,7 @@ const SelectedAttributeGraph = (props) => {
                 <i className={"icon-arrows-right"} onClick={increaseIndex}></i>
                 <i className={"icon-arrows-right-double"} onClick={jumpToEnd}></i>
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -8,8 +8,6 @@ import SelectedAttributeGraph from '../components/SelectedAttributeGraph';
 import ContinueSearch from '../components/ContinueSearch';
 
 const Landing = (props) => {
-    console.log(props.beer);
-
     // useEffect is the hook equivalent to componentDidMount, componentDidUpdate, and componentWillUnmount
     useEffect(() => {
         props.fetchBeer();

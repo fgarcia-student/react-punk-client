@@ -1,0 +1,21 @@
+.button {
+    border: .2rem solid $color-white;
+    border-radius: .3rem;
+    padding: 1.5rem;
+    transition: all .2s ease-in;
+
+    &__icon {
+        font-size: $icon-size;
+        font-weight: 700;
+    }
+
+    &__text {
+        padding-left: 1rem;
+        font-size: 2rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+}

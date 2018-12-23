@@ -9,7 +9,6 @@
              ),
         url('../assets/header_bg.jpg');
     color: $color-white;
-    clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
     
     &__landing {
         display: flex;
