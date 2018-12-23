@@ -3,7 +3,7 @@ import { ResponsiveContainer, LineChart, Line, ReferenceDot } from 'recharts';
 import BeerCard from './BeerCard';
 
 const SelectedAttributeGraph = (props) => {
-    const [lineColor, lineWidth] = ["#8884d8", 3];
+    const [lineColor, lineWidth] = ["#A52A2A", 3];
     const [selectedDotRadius, selectedDotColor] = [5, lineColor];
     const [index, setIndex] = useState(Math.ceil(props.beer.size / 2));
 
@@ -64,16 +64,16 @@ const SelectedAttributeGraph = (props) => {
                 </ResponsiveContainer>
             </div>
             <div className="section_interactive_graph__card_wrapper">
-                <i className={"icon-arrows-left-double-32 font-size-large"} onClick={jumpToStart}></i>
-                <i className={"icon-arrows-left font-size-large"} onClick={decreaseIndex}></i>
+                <i className={"icon-arrows-left-double-32"} onClick={jumpToStart}></i>
+                <i className={"icon-arrows-left"} onClick={decreaseIndex}></i>
                 <BeerCard
                     main={"name"}
                     sub={"tagline"}
                     attribute={props.selectedAttribute}
                     beer={sorted.get(index, null)}
                     />
-                <i className={"icon-arrows-right font-size-large"} onClick={increaseIndex}></i>
-                <i className={"icon-arrows-right-double font-size-large"} onClick={jumpToEnd}></i>
+                <i className={"icon-arrows-right"} onClick={increaseIndex}></i>
+                <i className={"icon-arrows-right-double"} onClick={jumpToEnd}></i>
             </div>
         </div>
     );
