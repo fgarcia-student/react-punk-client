@@ -42,10 +42,6 @@
             padding-right: .5rem;
         }
     }
-
-    &--animation--fade {
-        animation: fadeIn .2s ease-in forwards;
-    }
 }
 
 @media only screen and (max-width: $media-screen-medium) {
