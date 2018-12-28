@@ -8,11 +8,14 @@ import './css/icon-fonts/arrow/arrow-styles.css';
 import './css/main.scss';
 import * as serviceWorker from './service-worker/serviceWorker';
 
-ReactDOM.render(
+const root = document.getElementById('root');
+const App = () => (
     <Provider store={store} >
         <Landing />
-    </Provider>,
-document.getElementById('root'));
+    </Provider>
+);
+
+ReactDOM.render(<App />, root);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -17,7 +17,7 @@ const SearchByAttribute = (props) => {
 
 const ContinueSearch = (props) => {
     const [bSideActive, toggleSide] = useState(false);
-    const [searchVal, setSearchVal] = useState(null);
+    const [searchVal, setSearchVal] = useState("");
 
     function _setSearchVal(e) {
         setSearchVal(e.currentTarget.value);
