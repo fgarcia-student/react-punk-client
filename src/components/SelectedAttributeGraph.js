@@ -3,7 +3,7 @@ import { ResponsiveContainer, LineChart, Line, ReferenceDot } from 'recharts';
 import BeerCard from './BeerCard';
 
 const SelectedAttributeGraph = (props) => {
-    const [lineColor, lineWidth] = ["#A52A2A", 3];
+    const [lineColor, lineWidth] = ["#A52A2A", 6];
     const [selectedDotRadius, selectedDotColor] = [5, lineColor];
     const [index, setIndex] = useState(Math.ceil(props.beer.size / 2));
 
@@ -42,16 +42,10 @@ const SelectedAttributeGraph = (props) => {
     }
 
     return (
-        <div className="section_interactive_graph">
+        <section className="section_interactive_graph">
             <div className="section_interactive_graph__container">
                 <ResponsiveContainer>
-                    <LineChart className={"svg-padding-1"} data={sorted.toArray()}>
-                        <ReferenceDot
-                            x={index}
-                            y={sorted.get(index)[props.selectedAttribute]}
-                            r={selectedDotRadius}
-                            fill={selectedDotColor}
-                        />
+                    <LineChart className={"svg-padding"} data={sorted.toArray()}>
                         <Line
                             type="monotone"
                             dataKey={props.selectedAttribute}
@@ -60,22 +54,40 @@ const SelectedAttributeGraph = (props) => {
                             strokeWidth={lineWidth}
                             isAnimationActive={false}
                         />
+                        <ReferenceDot
+                            className="dot-padding"
+                            x={index}
+                            y={sorted.get(index)[props.selectedAttribute]}
+                            r={selectedDotRadius}
+                            fill={selectedDotColor}
+                            isFront={true}
+                        />
                     </LineChart>
                 </ResponsiveContainer>
             </div>
             <div className="section_interactive_graph__card_wrapper">
                 <i className={"icon-arrows-left-double-32"} onClick={jumpToStart}></i>
                 <i className={"icon-arrows-left"} onClick={decreaseIndex}></i>
-                <BeerCard
-                    main={"name"}
-                    sub={"tagline"}
-                    attribute={props.selectedAttribute}
-                    beer={sorted.get(index, null)}
+                <div
+                    style={{
+                        position: "relative",
+                        display: "block",
+                        padding: 0,
+                        background: "none",
+                    }}
+                    className="card"
+                >
+                    <BeerCard
+                        main={"name"}
+                        sub={"tagline"}
+                        attribute={props.selectedAttribute}
+                        beer={sorted.get(index, null)}
                     />
+                </div>
                 <i className={"icon-arrows-right"} onClick={increaseIndex}></i>
                 <i className={"icon-arrows-right-double"} onClick={jumpToEnd}></i>
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -2,8 +2,16 @@
     font-size: 4rem;
 }
 
-.svg-padding-1 {
+.svg-padding {
     & > svg {
-        padding: 3rem;
+        padding: 2.5rem;
     }
+}
+
+.dot-padding {
+    padding: 2px;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }

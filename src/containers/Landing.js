@@ -5,10 +5,9 @@ import { InitFetchBeer } from '../state/entities/beer/actions/InitFetchBeer';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import SelectedAttributeGraph from '../components/SelectedAttributeGraph';
+import ContinueSearch from '../components/ContinueSearch';
 
 const Landing = (props) => {
-    console.log(props.beer);
-
     // useEffect is the hook equivalent to componentDidMount, componentDidUpdate, and componentWillUnmount
     useEffect(() => {
         props.fetchBeer();
@@ -20,13 +19,16 @@ const Landing = (props) => {
     // if we added a value here, the hook would run on mount, and if that value has changed afterwards
 
     return (
-        <>
+        <div className="landing">
             <Header attribute={props.selectedAttribute} />
             <SelectedAttributeGraph
                 selectedAttribute={props.selectedAttribute}
                 beer={props.beer}
             />
-        </>
+            <ContinueSearch
+                selectedAttribute={props.selectedAttribute}
+            />
+        </div>
     );
 }
 

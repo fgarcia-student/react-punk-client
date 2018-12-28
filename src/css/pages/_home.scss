@@ -1,11 +1,15 @@
+.landing {
+    display: inline-flex;
+}
+
 .section_interactive_graph {
     height: 100vh;
-    margin-top: -10rem;
+    width: 100vw;
     background-image:
         linear-gradient(
-            to right bottom,
-            darken(rgba(#D6C0AF, 1), 50%),
-            darken(rgba(#D6C0AF, 0.8), 100%)
+            to bottom right,
+            darken(rgba(#C4AAAA, 1), 50%),
+            darken(rgba(#C4AAAA, 0.4), 50%)
         ),
         url(../assets/bottle-caps.jpg);
 
@@ -20,14 +24,92 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0 2rem;
 
         & > i {
-            font-size: $font-size-interactive-large;
+            font-size: $icon-size;
+            font-weight: 700;
             color: $color-white;
+            transition: all .2s ease-in;
             &:hover {
                 cursor: pointer;
+                transform: scale(1.15);
             }
         }
         
+    }
+}
+
+.section_continue_search {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image:
+        linear-gradient(
+            to bottom right,
+            darken(rgba(#C4AAAA, 1), 50%),
+            darken(rgba(#C4AAAA, 0.4), 50%)
+        ),
+        url(../assets/cans.jpg);
+    
+    color: $color-white;
+
+    &__title {
+        font-size: $font-size-continue_search-large;
+        font-weight: 100;
+    }
+
+    &__search {
+        display: flex;
+        padding: 2rem;
+
+        &__basic-search,
+        &__filter-search {
+            padding: 1rem;
+        }
+    }
+}
+
+.search-by-attribute {
+    display: inline-block;
+
+    &__attribute {
+        padding: .5rem;
+        font-size: 2rem;
+    }
+
+    &__input > input::-webkit-inner-spin-button,
+    &__input > input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &__input > input {
+        border: none;
+        padding: .2rem;
+        outline: none;
+        outline-offset: unset;
+        text-align: end;
+    }
+}
+
+@media only screen and (max-width: $media-screen-medium) {
+    .section_continue_search__title {
+        font-size: $font-size-continue_search-medium;
+    }
+}
+
+@media only screen and (max-width: $media-screen-small) {
+    .section_continue_search__title {
+        font-size: $font-size-continue_search-small;
+    }
+}
+
+@media only screen and (max-width: $media-screen-xsmall) {
+    .section_continue_search__title {
+        font-size: $font-size-continue_search-xsmall;
     }
 }

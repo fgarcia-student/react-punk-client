@@ -2,8 +2,8 @@
     width: 50vw;
     height: 20vh;
     margin: 1rem;
-    background-color: darken(rgba(#F3EBE5, .75), 10%);
-
+    color: $color-white;
+    background-color: darken(rgba(#F3EBE5, .7), 35%);
     font-size: $font-size-card-large;
     padding: 1rem;
     display: grid;
@@ -39,7 +39,6 @@
         justify-self: end;
 
         &__name {
-            text-transform: uppercase;
             padding-right: .5rem;
         }
     }

@@ -1,6 +1,7 @@
 
 .header {
     height: 100vh;
+    width: 100vw;
     background-image:
         linear-gradient(
                  to bottom right,
@@ -9,7 +10,6 @@
              ),
         url('../assets/header_bg.jpg');
     color: $color-white;
-    clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
     
     &__landing {
         display: flex;
@@ -21,7 +21,6 @@
 
         &__attribute {
             margin: 2rem;
-            text-transform: uppercase;
             background-image: linear-gradient(to bottom, $color-white 33%, transparent 33%);
             background-position: 0 ($font-size-header-large + 1);
             background-repeat: repeat-x;
