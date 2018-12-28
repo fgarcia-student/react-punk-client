@@ -19,7 +19,7 @@ const Landing = (props) => {
     // if we added a value here, the hook would run on mount, and if that value has changed afterwards
 
     return (
-        <>
+        <div className="landing">
             <Header attribute={props.selectedAttribute} />
             <SelectedAttributeGraph
                 selectedAttribute={props.selectedAttribute}
@@ -28,7 +28,7 @@ const Landing = (props) => {
             <ContinueSearch
                 selectedAttribute={props.selectedAttribute}
             />
-        </>
+        </div>
     );
 }
 

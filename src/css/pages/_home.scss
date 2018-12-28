@@ -1,5 +1,10 @@
+.landing {
+    display: inline-flex;
+}
+
 .section_interactive_graph {
     height: 100vh;
+    width: 100vw;
     background-image:
         linear-gradient(
             to bottom right,
@@ -25,8 +30,10 @@
             font-size: $icon-size;
             font-weight: 700;
             color: $color-white;
+            transition: all .2s ease-in;
             &:hover {
                 cursor: pointer;
+                transform: scale(1.15);
             }
         }
         
@@ -35,6 +42,7 @@
 
 .section_continue_search {
     height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,22 +66,15 @@
         display: flex;
         padding: 2rem;
 
-        &__basic-search {
-            padding: 1rem;
-        }
-
+        &__basic-search,
         &__filter-search {
-            &--aside,
-            &--bside {
-                padding: 1rem;
-            }
+            padding: 1rem;
         }
     }
 }
 
 .search-by-attribute {
     display: inline-block;
-    padding: 1rem;
 
     &__attribute {
         padding: .5rem;
@@ -84,6 +85,14 @@
     &__input > input::-webkit-outer-spin-button {
         -webkit-appearance: none;
         margin: 0;
+    }
+
+    &__input > input {
+        border: none;
+        padding: .2rem;
+        outline: none;
+        outline-offset: unset;
+        text-align: end;
     }
 }
 

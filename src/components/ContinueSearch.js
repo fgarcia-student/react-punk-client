@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import Button from './Button';
 
 const SearchByAttribute = (props) => {
+    const inputRef = React.useRef();
+    if (inputRef.current) { inputRef.current.focus(); }
+    const handleFocus = (e) => { inputRef.current.focus(); e.stopPropagation(); }
     return (
-        <div className="search-by-attribute">
+        <div className="search-by-attribute" onClick={handleFocus}>
             <div className="search-by-attribute__attribute uppercase">{props.selectedAttribute}</div>
             <div className="search-by-attribute__input">
-                <input type="number" onChange={props.setSearchVal} value={props.searchVal} />
+                <input ref={inputRef} type="number" onChange={props.setSearchVal} value={props.searchVal} />
             </div>
         </div>
     );
@@ -14,11 +17,7 @@ const SearchByAttribute = (props) => {
 
 const ContinueSearch = (props) => {
     const [bSideActive, toggleSide] = useState(false);
-    const [searchVal, setSearchVal] = useState();
-
-    function _toggleSide() {
-        toggleSide(!bSideActive);
-    }
+    const [searchVal, setSearchVal] = useState(null);
 
     function _setSearchVal(e) {
         setSearchVal(e.currentTarget.value);
@@ -29,12 +28,13 @@ const ContinueSearch = (props) => {
     }
 
     function startFilteredSearch() {
+        if (!bSideActive || !searchVal) return toggleSide(!bSideActive)
         console.log("start filtered search...");
     }
 
     return (
         <section className="section_continue_search">
-            <div className="section_continue_search__title">Continue your search</div>
+            <div className="section_continue_search__title">Refine your search</div>
             <div className="section_continue_search__search">
                 <div className="section_continue_search__search__basic-search">
                     <Button
@@ -42,29 +42,19 @@ const ContinueSearch = (props) => {
                         onClick={startDefaultSearch}
                     />
                 </div>
-                {!bSideActive &&
-                    <div className="section_continue_search__search__filter-search--aside">
-                        <Button
-                            icon={"lba lba-basic-magnifier"}
-                            text={`by ${props.selectedAttribute.toUpperCase()}`}
-                            onClick={_toggleSide}
-                        />
-                    </div>
-                }
-                {bSideActive &&
-                    <div className="section_continue_search__search__filter-search--bside">
-                        <Button
-                            icon={"lba lba-basic-magnifier"}
-                            onClick={startFilteredSearch}
-                        >
-                            <SearchByAttribute
-                                searchVal={searchVal}
-                                setSearchVal={_setSearchVal}
-                                selectedAttribute={props.selectedAttribute}
-                            />
-                        </Button>
-                    </div>
-                }
+                <div className="section_continue_search__search__filter-search">
+                    <Button
+                        icon={"lba lba-basic-magnifier"}
+                        text={`by ${props.selectedAttribute.toUpperCase()}`}
+                        showB={bSideActive}
+                        onClick={startFilteredSearch}
+                        b={<SearchByAttribute
+                            searchVal={searchVal}
+                            setSearchVal={_setSearchVal}
+                            selectedAttribute={props.selectedAttribute}
+                        />}
+                    />
+                </div>
             </div>
         </section>
     );
