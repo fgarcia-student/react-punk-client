@@ -6,6 +6,37 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import SelectedAttributeGraph from '../components/SelectedAttributeGraph';
 import ContinueSearch from '../components/ContinueSearch';
+import { Link } from "react-scroll";
+
+const Menu = (props) => {
+    const [toggle, setToggle] = React.useState("");
+    const handleToggle = (e) => {
+        if(!!toggle) {
+            setToggle("")
+        } else {
+            setToggle("cancel");
+        }
+    }
+    
+    return(
+        <div
+            className={`menu ${toggle}`}
+            onClick={handleToggle}
+        >
+            <div className="overlay" />
+            <div className="bar_a" />
+            <div className="bar_b" />
+            <div className="bar_c" />
+            <div className="content">
+                <ul className="nav">
+                    <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="header" href="#header">Header</Link></li>
+                    <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="interactive" href="#interactive">Interactive Graph</Link></li>
+                    <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="refine" href="#refine">Continue Search</Link></li>
+                </ul>
+            </div>
+        </div>
+    )
+}
 
 const Landing = (props) => {
     // useEffect is the hook equivalent to componentDidMount, componentDidUpdate, and componentWillUnmount
@@ -19,7 +50,8 @@ const Landing = (props) => {
     // if we added a value here, the hook would run on mount, and if that value has changed afterwards
 
     return (
-        <div className="landing">
+        <>
+            <Menu />
             <Header attribute={props.selectedAttribute} />
             <SelectedAttributeGraph
                 selectedAttribute={props.selectedAttribute}
@@ -28,7 +60,7 @@ const Landing = (props) => {
             <ContinueSearch
                 selectedAttribute={props.selectedAttribute}
             />
-        </div>
+        </>
     );
 }
 

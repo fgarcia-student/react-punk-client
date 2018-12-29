@@ -21,3 +21,4 @@ ReactDOM.render(<App />, root);
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
+setTimeout(() => window.scrollTo(0,0), 500);
