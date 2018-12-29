@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import BeerReducer from './entities/beer/reducers';
+import LandingReducer from './views/landing/reducers';
 
 function dummyReducer(state = {}, action) {
     return state;
@@ -12,7 +13,7 @@ export default combineReducers({
     }),
     views: combineReducers({
         // Reducers handling view models used by the application
-        dummyReducer
+        landing: LandingReducer
     }),
     session: combineReducers({
         // Reducers handling session information

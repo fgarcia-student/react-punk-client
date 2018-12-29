@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ResponsiveContainer, LineChart, Line, ReferenceDot } from 'recharts';
 import BeerCard from './BeerCard';
+import { Element } from 'react-scroll';
 
 const SelectedAttributeGraph = (props) => {
     const [lineColor, lineWidth] = ["#A52A2A", 6];
@@ -43,6 +44,7 @@ const SelectedAttributeGraph = (props) => {
 
     return (
         <section className="section_interactive_graph">
+            <Element name="interactive" />
             <div className="section_interactive_graph__container">
                 <ResponsiveContainer>
                     <LineChart className={"svg-padding"} data={sorted.toArray()}>
@@ -52,12 +54,11 @@ const SelectedAttributeGraph = (props) => {
                             dot={false}
                             stroke={lineColor}
                             strokeWidth={lineWidth}
-                            isAnimationActive={false}
                         />
                         <ReferenceDot
                             className="dot-padding"
-                            x={index}
-                            y={sorted.get(index)[props.selectedAttribute]}
+                            x={index || 1}
+                            y={sorted.get(index)[props.selectedAttribute] || 0}
                             r={selectedDotRadius}
                             fill={selectedDotColor}
                             isFront={true}

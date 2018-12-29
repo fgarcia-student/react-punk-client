@@ -35,7 +35,7 @@ const BeerCard = (props) => {
                     <div style={{ ...style, position: "relative" }} className="card__sub">{item[props.sub]}</div>
                     <div style={{ ...style, position: "relative" }} className="card__attribute">
                         <span style={{ ...style, position: "relative" }} className="card__attribute__name uppercase">{props.attribute}</span>
-                        <span style={{ ...style, position: "relative" }} className="card__attribute__value">{item[props.attribute]}</span>
+                        <span style={{ ...style, position: "relative" }} className="card__attribute__value">{item[props.attribute] || 0}</span>
                     </div>
                 </div>
             )}

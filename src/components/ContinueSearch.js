@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Button from './Button';
+import { Element } from 'react-scroll';
 
 const SearchByAttribute = (props) => {
     const inputRef = React.useRef();
-    if (inputRef.current) { inputRef.current.focus(); }
+    if (inputRef.current && props.isActive) { inputRef.current.focus(); }
     const handleFocus = (e) => { inputRef.current.focus(); e.stopPropagation(); }
     return (
         <div className="search-by-attribute" onClick={handleFocus}>
@@ -34,6 +35,7 @@ const ContinueSearch = (props) => {
 
     return (
         <section className="section_continue_search">
+            <Element name="refine" />
             <div className="section_continue_search__title">Refine your search</div>
             <div className="section_continue_search__search">
                 <div className="section_continue_search__search__basic-search">
@@ -49,6 +51,7 @@ const ContinueSearch = (props) => {
                         showB={bSideActive}
                         onClick={startFilteredSearch}
                         b={<SearchByAttribute
+                            isActive={bSideActive}
                             searchVal={searchVal}
                             setSearchVal={_setSearchVal}
                             selectedAttribute={props.selectedAttribute}
