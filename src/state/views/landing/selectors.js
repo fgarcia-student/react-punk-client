@@ -1,0 +1,1 @@
+export const getSelectedAttribute = (state) => state.views.landing.selectedAttribute;

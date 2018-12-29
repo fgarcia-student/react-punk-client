@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import SelectedAttributeGraph from '../components/SelectedAttributeGraph';
 import ContinueSearch from '../components/ContinueSearch';
 import { Link } from "react-scroll";
+import { getSelectedAttribute } from '../state/views/landing/selectors';
+import { SetSelectedAttribute } from '../state/views/landing/actions';
 
 const Menu = (props) => {
     const [toggle, setToggle] = React.useState("");
@@ -16,6 +18,11 @@ const Menu = (props) => {
         } else {
             setToggle("cancel");
         }
+    }
+
+    const handleSetAttribute = (e) => {
+        setToggle("");
+        props.setAttribute(e.currentTarget.value);
     }
     
     return(
@@ -32,6 +39,13 @@ const Menu = (props) => {
                     <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="header" href="#header">Header</Link></li>
                     <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="interactive" href="#interactive">Interactive Graph</Link></li>
                     <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="refine" href="#refine">Continue Search</Link></li>
+                    <li className="nav__item">
+                        <select onClick={(e) => e.stopPropagation()} className="select" value={props.selectedAttribute} onChange={handleSetAttribute}>
+                            <option value="abv">ABV</option>
+                            <option value="ibu">IBU</option>
+                            <option value="ph">PH</option>
+                        </select>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -51,7 +65,10 @@ const Landing = (props) => {
 
     return (
         <>
-            <Menu />
+            <Menu
+                setAttribute={props.setSelectedAttribute}
+                selectedAttribute={props.selectedAttribute}
+            />
             <Header attribute={props.selectedAttribute} />
             <SelectedAttributeGraph
                 selectedAttribute={props.selectedAttribute}
@@ -67,13 +84,14 @@ const Landing = (props) => {
 const mapStateToProps = (state) => {
     return {
         beer: getBeer(state),
-        selectedAttribute: "abv"
+        selectedAttribute: getSelectedAttribute(state)
     };
 }
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         fetchBeer: InitFetchBeer,
+        setSelectedAttribute: SetSelectedAttribute,
     }, dispatch);
 }
 

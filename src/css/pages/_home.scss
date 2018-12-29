@@ -1,3 +1,14 @@
+.select {
+    -webkit-appearance: none;
+    padding: 1rem;
+    font-size: 3rem;
+    transition: all .3s ease-in;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba($color-black, .1);
+    }
+}
+
 .nav {
     &__item {
 
@@ -73,7 +84,7 @@
             opacity: 1;
             background-color: $color-white;
             width: 30vw;
-            height: 28vh;
+            height: 35vh;
             padding: .5rem;
             margin: 1rem;
             transition: all 0.4s;
@@ -192,6 +203,10 @@
     }
 
     &.cancel > .content {
+        font-size: 2.2rem;
+    }
+
+    .select {
         font-size: 2.2rem;
     }
 }

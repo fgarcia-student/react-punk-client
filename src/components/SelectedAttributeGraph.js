@@ -54,12 +54,11 @@ const SelectedAttributeGraph = (props) => {
                             dot={false}
                             stroke={lineColor}
                             strokeWidth={lineWidth}
-                            isAnimationActive={false}
                         />
                         <ReferenceDot
                             className="dot-padding"
-                            x={index}
-                            y={sorted.get(index)[props.selectedAttribute]}
+                            x={index || 1}
+                            y={sorted.get(index)[props.selectedAttribute] || 0}
                             r={selectedDotRadius}
                             fill={selectedDotColor}
                             isFront={true}
