@@ -61,6 +61,7 @@
 
     & > .content {
         opacity: 0;
+        display: none;
         font-size: 3rem;
         transition: all 0.4s;
     }
@@ -81,13 +82,13 @@
         height: 100vh;
 
         & > .content {
+            display: block;
             opacity: 1;
             background-color: $color-white;
             width: 30vw;
             height: 35vh;
             padding: .5rem;
             margin: 1rem;
-            transition: all 0.4s;
         }
 
         & > .bar_a {
