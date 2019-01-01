@@ -36,9 +36,9 @@ const Menu = (props) => {
             <div className="bar_c" />
             <div className="content">
                 <ul className="nav">
-                    <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="header" href="#header">Header</Link></li>
-                    <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="interactive" href="#interactive">Interactive Graph</Link></li>
-                    <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="refine" href="#refine">Continue Search</Link></li>
+                    <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="header" href="#header"><i className="lba lba-basic-home" /><span className="nav__item__text">Header</span></Link></li>
+                    <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="interactive" href="#interactive"><i className="lba lba-basic-mixer2" /><span className="nav__item__text">Interactive Graph</span></Link></li>
+                    <li className="nav__item"><Link onClick={handleToggle} ignoreCancelEvents smooth to="refine" href="#refine"><i className="lba lba-basic-magnifier-plus" /><span className="nav__item__text">Continue Search</span></Link></li>
                     <li className="nav__item">
                         <select onClick={(e) => e.stopPropagation()} className="select" value={props.selectedAttribute} onChange={handleSetAttribute}>
                             <option value="abv">ABV</option>

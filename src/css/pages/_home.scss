@@ -17,6 +17,10 @@
         align-items: center;
         padding: 2rem;
 
+        &__text {
+            padding-left: .5rem;
+        }
+
         a:link,
         a:visited {
             color: $color-black;
@@ -227,7 +231,11 @@
         font-size: $font-size-continue_search-xsmall;
     }
 
+    .nav__item__text {
+        display: none;
+    }
+
     &.cancel > .content {
-        font-size: 1rem;
+        font-size: 3rem;
     }
 }
