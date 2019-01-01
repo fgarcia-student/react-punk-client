@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import { Element } from 'react-scroll';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const SearchByAttribute = (props) => {
     const inputRef = React.useRef();
@@ -24,13 +26,27 @@ const ContinueSearch = (props) => {
         setSearchVal(e.currentTarget.value);
     }
 
+    function showComingSoonModal() {
+        confirmAlert({
+            title: 'Search coming soon!',
+            buttons: [
+                {
+                    label: 'Close',
+                    onClick: () => {}
+                }
+            ]
+        })      
+    }
+
     function startDefaultSearch() {
-        console.log("start default search...");
+        // console.log("start default search...");
+        showComingSoonModal();
     }
 
     function startFilteredSearch() {
         if (!bSideActive || !searchVal) return toggleSide(!bSideActive)
-        console.log("start filtered search...");
+        // console.log("start filtered search...");
+        showComingSoonModal();
     }
 
     return (
