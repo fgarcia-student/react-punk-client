@@ -21,9 +21,15 @@
 
 ### Future goals for the project:
 
- - [ ] Design pages (expand later..)
- - [ ] Add functionality to page X (expand later..)
- - [ ] Deploy application using free hosting (heroku, etc)
- - [ ] Incorporate some BaaS like Firebase (expand later..)
+ - [ ] Design pages
+   - [X] Landing page
+   - [ ] Search page
+   - [ ] Specific beer page
+ - [ ] Add functionality to pages
+   - [X] Landing page
+   - [ ] Search page
+   - [ ] Specific beer page
+ - [X] Deploy application using free hosting
+   - https://react-beer.netlify.com/
  
  MIT License 2018
