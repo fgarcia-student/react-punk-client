@@ -30,6 +30,5 @@
    - [ ] Search page
    - [ ] Specific beer page
  - [X] Deploy application using free hosting
-   - https://react-beer.netlify.com/
  
  MIT License 2018
