@@ -22,6 +22,7 @@ const leaveStyle= {
 const Header = (props) => {
     return (
         <section className="header">
+            <div className="header__love">Made with <span role="img" aria-label="heart">❤️</span> by <a className="header__love--link" href="https://github.com/fgarcia-student">Francisco</a></div>
             <Element name="header" />
             <Transition
                 config={{ tension: 180, friction: 20 }}

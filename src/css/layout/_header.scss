@@ -10,6 +10,23 @@
              ),
         url('../assets/header_bg.jpg');
     color: $color-white;
+
+    &__love {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        font-size: 1.2rem;
+        background-color: #333232;
+        border-radius: 3px;
+        border: 1px solid #071013;
+        padding: .5rem;
+
+        &--link {
+            text-decoration: underline;
+            color: inherit;
+        }
+    }
     
     &__landing {
         display: flex;
