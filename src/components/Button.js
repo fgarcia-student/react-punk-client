@@ -13,7 +13,7 @@ const Button = (props) => {
     if (props.b) {
         width = "15rem";
         if (props.showB) {
-            width = "22rem";
+            width = "25rem";
         }
     }
     return  (

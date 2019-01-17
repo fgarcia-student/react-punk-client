@@ -39,7 +39,7 @@
         &__attribute {
             margin: 2rem;
             background-image: linear-gradient(to bottom, $color-white 33%, transparent 33%);
-            background-position: 0 ($font-size-header-large + 1);
+            background-position: 0 ($font-size-header-large + 6);
             background-repeat: repeat-x;
             background-size: 1px 1.5rem;
         }
@@ -51,7 +51,7 @@
         font-size: $font-size-header-medium;
 
         &__attribute {
-            background-position: 0 ($font-size-header-medium + 1);
+            background-position: 0 ($font-size-header-medium + 4);
         }
     }
 }
@@ -62,7 +62,7 @@
         font-size: $font-size-header-small;
 
         &__attribute {
-            background-position: 0 ($font-size-header-small + 1);
+            background-position: 0 ($font-size-header-small + 3);
         }
     }
 }
@@ -72,7 +72,7 @@
         font-size: $font-size-header-xsmall;
 
         &__attribute {
-            background-position: 0 ($font-size-header-xsmall + 1);
+            background-position: 0 ($font-size-header-xsmall + 2);
         }
     }
 }
